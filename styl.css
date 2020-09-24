@@ -1,0 +1,57 @@
+a {
+	color: #ffd87e;
+}
+
+header, footer, section#sl {
+	background-color:  #af8c4b;
+}
+
+section#sp {
+	background-color: #ffd87e;
+	width: 70%;
+	float: left;
+	height: 500px;
+	overflow: scroll;
+}
+
+section#sl {
+	text-align: right;
+	width: 30%;
+	float: left;
+	height: 500px;
+}
+
+header, footer {
+	text-align: center;
+}
+
+body {
+	font-family: Tahoma;
+}
+
+footer {
+	clear: both;
+	height: 25px;
+}
+
+header {
+	height: 60px;
+}
+
+th.sk, td.sk {
+	width: 405px;
+}
+
+hr {
+	border-color: #ffd87e;
+}
+
+ul {
+	list-style-type: circle;
+}
+
+td, th {
+	border: 1px dotted black;
+}
+
+

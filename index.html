@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Szkola ponadgimnazjalna</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styl.css">
+	<script type="text/javascript">
+		
+		function highest_average() {
+			//pobranie danych z formularza
+			var i1 = document.getElementById('i1').value;
+			var i2 = document.getElementById('i2').value;
+			var i3 = document.getElementById('i3').value;
+			if(isNaN(i1) || i1 == "" || isNaN(i2) || i2 == "" || isNaN(i3) || i3 == "") {
+					alert("wpisz poprawne dane");
+			}else {
+					i1 = parseFloat(i1);
+					i2 = parseFloat(i2);
+					i3 = parseFloat(i3);
+					//var ns = Math.max(i1,i2,i3);
+					//wyprowadzenie danych do znacznika html
+					document.getElementById('ns').innerHTML = Math.max(i1,i2,i3);
+				}		
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Projekt strony internetowej szkoly ponadgimnazjalnej</h1>
+	</header>
+
+	<section id="sl">
+		<h3>do pobrania</h3>
+		<ul>
+			<li><a href="../baza/zapytania.txt">zapytania sql</a></li>
+			<li><a href="../baza/szkola_nowa.sql">bazy danych</a></li>
+		</ul>
+		<hr>
+		<h3>Wyznaczanie najwyzszej sredniej</h3>
+		<ul>
+			<li>Polak <input type="text" name="i1" id="i1"></li>
+			<li>Nowak <input type="text" name="i2" id="i2"></li>
+			<li>Rysik <input type="text" name="i3" id="i3"></li>
+		</ul>
+		<input type="button" value="Wyznacz" onclick="highest_average()">
+		<h3>Najwyzsza srednia</h3>
+		<div id="ns"></div>
+	</section>
+
+	<section id="sp">
+		<table>
+			<tr>
+				<th>tresc zapytania</th>
+				<th class="sk">zrzut ekranu</th>	
+			</tr>
+			<tr>
+				<td>INSERT INTO wychowawca VALUES("5", "Maciej", "Stasiak", "5");</td>
+				<td class="sk"><img src="kwerenda1.jpg" alt="kwerenda1.jpg"></td>	
+			</tr>
+			<tr>
+				<td>SELECT uczen.imie, uczen.nazwisko FROM wychowawca, uczen WHERE wychowawca.id_klasy=uczen.id_klasy AND wychowawca.nazwisko='Michalska';</td>
+				<td class="sk"><img src="kwerenda2.jpg" alt="kwerenda2.jpg"></td>
+			</tr>
+			<tr>
+				<td>CREATE USER 'K_Pietkiewicz'@'localhost' IDENTIFIED BY 'kp_123';</td>
+				<td class="sk"><img src="nowy_uzytkownik.jpg" alt="nowy_uzytkownik.jpg"></td>
+			</tr>
+			<tr>
+				<td>GRANT SELECT,  INSERT ON szkola.uczen TO 'K_Pietkiewicz'@'localhost';</td>
+				<td class="sk"><img src="uprawnienia.jpg" alt="uprawnienia.jpg"></td>
+			</tr>
+		</table>
+	</section>
+
+	<footer>
+		<h4>strone wykonal/a 12345678910</h4>
+	</footer>
+</body>
+</html>
